@@ -1,0 +1,33 @@
+
+Your Log number 1 is Ready : 
+First Number is : 100 
+Operand is : + 
+Second Number is : 76 
+Result is : 176 
+Time is : Sat Nov  8 19:33:36 2025
+ 
+*********************************** 
+Your Log number 2 is Ready : 
+First Number is : 3455 
+Operand is : - 
+Second Number is :  8 
+Result is : 3447 
+Time is : Sat Nov  8 19:34:01 2025
+ 
+*********************************** 
+Your Log number 3 is Ready : 
+First Number is : 1222 
+Operand is : * 
+Second Number is :  8 
+Result is : 9776 
+Time is : Sat Nov  8 19:34:10 2025
+ 
+*********************************** 
+Your Log number 4 is Ready : 
+First Number is : 7666 
+Operand is : / 
+Second Number is : 98 
+Result is : 78 
+Time is : Sat Nov  8 19:34:16 2025
+ 
+*********************************** 

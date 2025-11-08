@@ -1,75 +1,93 @@
 #include <stdio.h>
+#include <time.h>
 
-float SumNumbers(float first, float second){
+void Calculate_Logs(float first, char operand, float second, float result){
+    static int logs_number = 0;
+    logs_number++;
+    FILE* ptr = fopen("logs.txt", "a+w");
+    if (ptr == NULL)
+    {
+        printf("Error Opening File \n");
+    }
+    time_t t;
+    time(&t);
+    fprintf(ptr, "Your Log number %d is Ready : \n", logs_number);
+    fprintf(ptr, "First Number is : %2.f \n", first);
+    fprintf(ptr, "Operand is : %c \n", operand);
+    fprintf(ptr, "Second Number is : %2.f \n", second);
+    fprintf(ptr, "Result is : %2.f \n", result);
+    fprintf(ptr, "Time is : %s \n", ctime(&t));
+    fprintf(ptr, "*********************************** \n");
+
+
+    fclose(ptr);
+}
+
+float Sum(float first, float second){
     return first + second;
 }
 
-float SubstracNumbers(float first, float second){
+float Substract(float first, float second){
     return first - second;
 }
 
-float MultiplayNumbers(float first, float second){
+float Multiplay(float first, float second){
     return first * second;
 }
 
-float DivideNumbers(float first, float second){
+float Divide(float first, float second){
     return first / second;
 }
 
 int main()
 {
     float first_number, second_number, result;
-    char Operand, choice;
+    char operand, choice;
+
     do
     {
-        printf("Welcome to Farhad Rahimi Klie Calculator... \n");
-        printf("Enter your First Number ");
-        scanf("%f", &first_number);
 
-        printf("Enter your Operand (+, -, *, /) ");
-        scanf(" %c", &Operand);
-        
-        printf("Enter your Second Number ");
-        scanf("%f", &second_number);
+    printf("Welcome to farhad rahimi klie Calculator using C \n");
 
+    printf("please enter your first number  ");
+    scanf("%f", &first_number);
 
+    printf("please enter your Operand (+, -, *, /) ");
+    scanf(" %c", &operand);
 
-        switch (Operand)
-        {
-        case '+':
-            result = SumNumbers(first_number, second_number);
-            break;
-        case '-':
-            result = SubstracNumbers(first_number, second_number);
-            break;
-        case '*':
-            result = MultiplayNumbers(first_number, second_number);
-            break;
-        case '/':
-            result = DivideNumbers(first_number, second_number);
-            break;    
-        default:
-            printf("Please Enter valid Integers...");
-            break;
-        }
-        printf("\n");
-        printf("First Number is : %.2f \n", first_number);
-        printf("************* \n");
+    printf("please enter your second number  ");
+    scanf("%f", &second_number);
 
-        printf("Operand is : %c \n", Operand);
-        printf("************* \n");
+    switch (operand)
+    {
+    case '+':
+        result = Sum(first_number, second_number);
+        break;
+    case '-':
+        result = Substract(first_number, second_number);
+        break;
+    case '*':
+        result = Multiplay(first_number, second_number);
+        break;
+    case '/':
+        result = Divide(first_number, second_number);
+        break;
+    default:
+       printf("please enter valid data...");
+        break;
+    }
 
-        printf("Second Number is : %.2f \n", second_number);
-        printf("************* \n");
+    printf("First Number is : %.2f \n", first_number);
+    printf("Operand is : %c \n", operand);
+    printf("Second Number is : %.2f \n", second_number);
+    printf("Result of both is : %.2f \n", result);
 
-        printf("The Result is : %.2f \n", result);
-        printf("****************** \n");
+    Calculate_Logs(first_number, operand, second_number, result);
 
-        printf("\n");
-
-        printf("want to continue ? (y / n)");
-        scanf(" %c", &choice);
+    printf("Want to Continue ? (y / n) ");
+    scanf(" %c", &choice);
     } while (choice == 'y' || choice == 'Y');
-    printf("game is over \n");
+    
+    printf("Game Over \n");
     return 0;
 }
