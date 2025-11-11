@@ -33,27 +33,6 @@ void Save_Logs(float first, char operand, float second, float result) {
     }
 }
 
-// void Calculate_Logs(float first, char operand, float second, float result){
-//     static int logs_number = 0;
-//     logs_number++;
-//     FILE* ptr = fopen("logs.txt", "a+w");
-//     if (ptr == NULL)
-//     {
-//         printf("Error Opening File \n");
-//     }
-//     time_t t;
-//     time(&t);
-//     fprintf(ptr, "Your Log number %d is Ready : \n", logs_number);
-//     fprintf(ptr, "First Number is : %2.f \n", first);
-//     fprintf(ptr, "Operand is : %c \n", operand);
-//     fprintf(ptr, "Second Number is : %2.f \n", second);
-//     fprintf(ptr, "Result is : %2.f \n", result);
-//     fprintf(ptr, "Time is : %s \n", ctime(&t));
-//     fprintf(ptr, "*********************************** \n");
-
-
-//     fclose(ptr);
-// }
 
 float Sum(float first, float second){
     return first + second;
